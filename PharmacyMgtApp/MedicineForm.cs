@@ -16,10 +16,18 @@ namespace PharmacyMgtApp
     {
         SqlConnection Con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Njayzzy\\Documents\\PhramacyApp.mdf;Integrated Security=True;Connect Timeout=30");
         
-        public void populate()
+        public void Populate()
         {
             Con.Open();
+            string Myquery = "select * from Medicine_tb1";
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(Myquery, Con);
+            SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
+            var ds = new DataSet();
+            dataAdapter.Fill(ds);
+
+            dataGridView1.ReadOnly = true;
+            dataGridView1.DataSource = ds.Tables[0];
             Con.Close();
         }
 
@@ -61,22 +69,35 @@ namespace PharmacyMgtApp
 
         private void MedicineForm_Load(object sender, EventArgs e)
         {
-
+            Populate();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            /*
+            MedicineName.Text = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+            BuyingPrice.Text = dataGridView1.SelectedRows[0].Cells[1].Value.ToString();
+            SellingPrice.Text = dataGridView1.SelectedRows[0].Cells[2].Value.ToString();
+            Quantity.Text = dataGridView1.SelectedRows[0].Cells[3].Value.ToString(); 
+            */
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                MedicineName.Text = row.Cells["MedName"].Value.ToString();
+                BuyingPrice.Text = row.Cells["Bprice"].Value.ToString();
+                SellingPrice.Text = row.Cells["Sprice"].Value.ToString();
+                Quantity.Text = row.Cells["Company"].Value.ToString();
+            }
         }
 
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-            Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Medicine_tb1 values('" + MedicineName.Text + "', "+ BuyingPrice.Text +", "+SellingPrice.Text+", "+Quantity.Text+", '"+ExpireDate.Text+"', '"+companycb+"' )", Con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Medicine Successfully Added");
-            Con.Close();
-        }
+        /* private void textBox1_TextChanged_1(object sender, EventArgs e)
+         {
+             Con.Open();
+             SqlCommand cmd = new SqlCommand("insert into Medicine_tb1 values('" + MedicineName.Text + "', "+ BuyingPrice.Text +", "+SellingPrice.Text+", "+Quantity.Text+", '"+ExpireDate.Text+"', '"+companycb+"' )", Con);
+             cmd.ExecuteNonQuery();
+             MessageBox.Show("Medicine Successfully Added");
+             Con.Close();
+         } */
 
         private void label7_Click(object sender, EventArgs e)
         {
@@ -85,11 +106,17 @@ namespace PharmacyMgtApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Con.Open();
-            SqlCommand cmd = new SqlCommand("insert into Medicine_tb1 values('" + MedicineName.Text + "', " + BuyingPrice.Text + ", " + SellingPrice.Text + ", " + Quantity.Text + ", '" + ExpireDate.Text + "', '" + companycb + "' )", Con);
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("Medicine Successfully Added");
-            Con.Close();
+            if(MedicineName.Text == "" || SellingPrice.Text == "" || BuyingPrice.Text == "" || Quantity.Text == "" || companycb.SelectedItem == null)
+            {
+                MessageBox.Show("Missing Data. Fill All the Forms Please");
+            } else {
+                Con.Open();
+                SqlCommand cmd = new SqlCommand("insert into Medicine_tb1 values('" + MedicineName.Text + "', " + BuyingPrice.Text + ", " + SellingPrice.Text + ", " + Quantity.Text + ", '" + ExpireDate.Text + "', '" + companycb.SelectedItem.ToString() + "' )", Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Medicine Successfully Added");
+                Con.Close();
+                Populate();
+            }
         }
     }
 }
