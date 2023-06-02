@@ -86,7 +86,8 @@ namespace PharmacyMgtApp
                 MedicineName.Text = row.Cells["MedName"].Value.ToString();
                 BuyingPrice.Text = row.Cells["Bprice"].Value.ToString();
                 SellingPrice.Text = row.Cells["Sprice"].Value.ToString();
-                Quantity.Text = row.Cells["Company"].Value.ToString();
+                Quantity.Text = row.Cells["MedQty"].Value.ToString();
+                companycb.SelectedItem = row.Cells["Company"].Value.ToString();
             }
         }
 
@@ -117,6 +118,44 @@ namespace PharmacyMgtApp
                 Con.Close();
                 Populate();
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Con.Open();
+            string MyQuery = "UPDATE Medicine_tb1 SET Bprice = " + BuyingPrice.Text + ",Sprice = " + SellingPrice.Text + ",MedQty = " + Quantity.Text + ",ExpDate = '" + ExpireDate.Text + "',Company = '" + companycb.SelectedItem.ToString() + "' WHERE  MedName = '" + MedicineName.Text + "';";
+            SqlCommand cmd = new SqlCommand(MyQuery, Con);
+            cmd.ExecuteNonQuery();
+
+            MessageBox.Show("Medicine Update Successfully!");
+            
+            Con.Close();
+
+            Populate();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(MedicineName.Text == "")
+            {
+                MessageBox.Show("Wrong Options For the Medicine to be deleted");
+            } else
+            {   
+                Con.Open();
+                string myQuery = "delete from Medicine_tb1 where MedName = '" + MedicineName.Text + "';";
+                SqlCommand cmd = new SqlCommand(myQuery, Con);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Medicine Deleted Successfully");
+                Con.Close();
+            }
+
+            Populate();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
