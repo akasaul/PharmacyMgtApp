@@ -84,16 +84,32 @@ namespace PharmacyMgtApp
 
         private void delEmpBtn_Click(object sender, EventArgs e)
         {
+            if (empid.Text == "")
+            {
+                MessageBox.Show("Provide the Employee ID");
+            }
+            else
+            {
+                Con.Open();
+                string myQuery = "delete from Employee_tb1 where EmpId = '" + empid.Text + "';";
+                SqlCommand cmd = new SqlCommand(myQuery, Con);
 
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Employee Deleted Successfully!");
+                Con.Close();
+            }
+
+            Populate();
         }
 
         private void updateEmpBtn_Click(object sender, EventArgs e)
         {
             Con.Open();
-            string MyQuery = "UPDATE Employee_tb1 SET EmpId = " + empid.Text + ",Empname = " + empname.Text + ",Empsalary = " + empsalary.Text + ",EmpAge = " + empage.Text + ",EmpPhone = '" + empphone.Text +",EmpPassword = '" + emppassword.Text +",EmpSex = '" + empsex.SelectedItem.ToString() + "' WHERE  EmpId = '" + empid.Text+ "';";
+
+            string MyQuery = "UPDATE Employee_tb1 SET EmpId = '" + empid.Text + "',Empname = '" + empname.Text + "',Empsalary = '" + empsalary.Text + "',EmpAge = '" + empage.Text + "',EmpPhone = '" + empphone.Text +"',EmpPassword = '" + emppassword.Text +"',EmpSex = '" + empsex.Text + "' WHERE  EmpId = '" + empid.Text+ "';";
             SqlCommand cmd = new SqlCommand(MyQuery, Con);
             cmd.ExecuteNonQuery();
-
+            
             MessageBox.Show("Employee Updated Successfully!");
 
             Con.Close();
