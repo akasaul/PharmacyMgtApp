@@ -88,5 +88,25 @@ namespace PharmacyMgtApp
 
             Populate();
         }
+
+        private void delCmpBtn_Click(object sender, EventArgs e)
+        {
+            if (cmpId.Text == "")
+            {
+                MessageBox.Show("Provide the Company ID");
+            }
+            else
+            {
+                Con.Open();
+                string myQuery = "delete from Company_tb1 where CompId = '" + cmpId.Text + "';";
+                SqlCommand cmd = new SqlCommand(myQuery, Con);
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Company Deleted Successfully!");
+                Con.Close();
+            }
+
+            Populate();
+        }
     }
 }

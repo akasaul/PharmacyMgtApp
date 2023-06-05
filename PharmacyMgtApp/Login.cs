@@ -41,5 +41,18 @@ namespace PharmacyMgtApp
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+                HomeForm homeForm  = new HomeForm();    
+            if(Username.Text == "Admin" && Password.Text == "admin")
+            {
+                homeForm.Show();
+                this.Hide();
+            } else
+            {
+                MessageBox.Show("Wrong Username or password");
+            }
+        }
     }
 }

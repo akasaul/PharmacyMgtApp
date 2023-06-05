@@ -46,10 +46,10 @@
             this.delEmpBtn = new System.Windows.Forms.Button();
             this.updateEmpBtn = new System.Windows.Forms.Button();
             this.addEmpBtn = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
             this.employeeGridView = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.emppassword = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.employeeGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -214,19 +214,6 @@
             this.addEmpBtn.UseVisualStyleBackColor = false;
             this.addEmpBtn.Click += new System.EventHandler(this.addEmpBtn_Click);
             // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.Brown;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(202, 480);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(80, 26);
-            this.textBox4.TabIndex = 27;
-            this.textBox4.Text = "BACK";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
-            // 
             // employeeGridView
             // 
             this.employeeGridView.AllowUserToOrderColumns = true;
@@ -270,18 +257,31 @@
             this.emppassword.Size = new System.Drawing.Size(140, 20);
             this.emppassword.TabIndex = 32;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Brown;
+            this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(190, 467);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 34);
+            this.button1.TabIndex = 34;
+            this.button1.Text = "BACK";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Employees
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(969, 510);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.emppassword);
             this.Controls.Add(this.employeeGridView);
             this.Controls.Add(this.delEmpBtn);
             this.Controls.Add(this.updateEmpBtn);
             this.Controls.Add(this.addEmpBtn);
-            this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.empphone);
             this.Controls.Add(this.empsex);
@@ -322,10 +322,10 @@
         private System.Windows.Forms.TextBox empphone;
         private System.Windows.Forms.Button delEmpBtn;
         private System.Windows.Forms.Button updateEmpBtn;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Button addEmpBtn;
         private System.Windows.Forms.DataGridView employeeGridView;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox emppassword;
+        private System.Windows.Forms.Button button1;
     }
 }

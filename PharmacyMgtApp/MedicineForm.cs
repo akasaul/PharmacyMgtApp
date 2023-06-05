@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PharmacyMgtApp
 {
@@ -67,9 +68,32 @@ namespace PharmacyMgtApp
 
         }
 
+        public void fillComboBox()
+        {
+            string sql = "select CompName from Company_tb1";
+            SqlCommand cmd = new SqlCommand(sql, Con);
+
+            SqlDataReader rdr;
+
+            try
+            {
+                Con.Open();
+                DataTable dt = new DataTable();
+                dt.Columns.Add("CompName", typeof(string));
+                rdr = cmd.ExecuteReader();
+                dt.Load(rdr);
+
+                companycb.ValueMember = "CompName";
+                companycb.DataSource = dt;
+
+                Con.Close();
+            }
+            catch { }
+        }
         private void MedicineForm_Load(object sender, EventArgs e)
         {
             Populate();
+            fillComboBox();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -156,6 +180,25 @@ namespace PharmacyMgtApp
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void companycb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
         }
     }
 }

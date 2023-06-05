@@ -131,5 +131,12 @@ namespace PharmacyMgtApp
                 empsex.SelectedItem = row.Cells["EmpSex"].Value.ToString();
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HomeForm homeForm = new HomeForm();
+            homeForm.Show();
+            this.Hide();
+        }
     }
 }
