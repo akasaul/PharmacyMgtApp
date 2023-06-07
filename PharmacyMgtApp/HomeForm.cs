@@ -16,10 +16,10 @@ namespace PharmacyMgtApp
         {
             InitializeComponent();
         }
-        MedicineForm medForm = new MedicineForm();
-        Employees employees = new Employees();     
-        Company company = new Company();   
-        BillingForm billingForm = new BillingForm();        
+        MedicineFormRef medForm = new MedicineFormRef();
+        EmployeeForm employees = new EmployeeForm();     
+        CompanyForm company = new CompanyForm();   
+        BillingFormRef billingForm = new BillingFormRef();        
         private void button1_Click_1(object sender, EventArgs e)
         {
             medForm.Show();     

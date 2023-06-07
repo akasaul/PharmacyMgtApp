@@ -128,7 +128,7 @@ namespace PharmacyMgtApp
                 BillGridView.Rows[index].Cells["TotalPrice"].Value = unitp * Convert.ToInt32(billingQty.Text);
 
                 GridTotal = GridTotal + total;
-                totalAmount.Text = "Rs" + GridTotal;
+                totalAmount.Text = "$ " + GridTotal;
 
             }
         }
