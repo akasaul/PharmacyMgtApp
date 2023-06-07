@@ -138,5 +138,15 @@ namespace PharmacyMgtApp
             homeForm.Show();
             this.Hide();
         }
+
+        private void empid_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
