@@ -121,5 +121,45 @@ namespace PharmacyMgtApp
         {
             Populate();
         }
+
+        private void gunaLabel2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmpPhone_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmpId_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmpName_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaImageButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

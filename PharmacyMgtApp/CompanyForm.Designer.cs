@@ -62,6 +62,7 @@
             this.gunaLabel2.Size = new System.Drawing.Size(212, 28);
             this.gunaLabel2.TabIndex = 5;
             this.gunaLabel2.Text = "Company Information";
+            this.gunaLabel2.Click += new System.EventHandler(this.gunaLabel2_Click);
             // 
             // companyGridView
             // 
@@ -118,6 +119,7 @@
             this.cmpPhone.TabIndex = 54;
             this.cmpPhone.Text = "Phone";
             this.cmpPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cmpPhone.OnValueChanged += new System.EventHandler(this.cmpPhone_OnValueChanged);
             // 
             // cmpAddress
             // 
@@ -158,6 +160,7 @@
             this.bunifuCards1.ShadowDepth = 20;
             this.bunifuCards1.Size = new System.Drawing.Size(285, 429);
             this.bunifuCards1.TabIndex = 59;
+            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
             // 
             // cmpId
             // 
@@ -178,6 +181,7 @@
             this.cmpId.TabIndex = 5;
             this.cmpId.Text = "ID";
             this.cmpId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cmpId.OnValueChanged += new System.EventHandler(this.cmpId_OnValueChanged);
             // 
             // cmpName
             // 
@@ -198,6 +202,7 @@
             this.cmpName.TabIndex = 49;
             this.cmpName.Text = "Name";
             this.cmpName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.cmpName.OnValueChanged += new System.EventHandler(this.cmpName_OnValueChanged);
             // 
             // gunaGradientButton3
             // 
@@ -289,6 +294,7 @@
             this.gunaLabel1.Size = new System.Drawing.Size(99, 22);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Company";
+            this.gunaLabel1.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // panel1
             // 
@@ -297,6 +303,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(197, 55);
             this.panel1.TabIndex = 1;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // flowLayoutPanel1
             // 
@@ -327,6 +334,7 @@
             this.gunaImageButton2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
             this.gunaImageButton2.Size = new System.Drawing.Size(197, 168);
             this.gunaImageButton2.TabIndex = 12;
+            this.gunaImageButton2.Click += new System.EventHandler(this.gunaImageButton2_Click);
             // 
             // gunaGradientButton4
             // 
