@@ -16,11 +16,6 @@ namespace PharmacyMgtApp
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
         MedicineForm medForm = new MedicineForm();
         Employees employees = new Employees();     
         Company company = new Company();   
@@ -59,6 +54,67 @@ namespace PharmacyMgtApp
             Login lg = new Login(); 
             lg.Show();
             this.Hide();
+        }
+
+        private void gunaImageButton1_Click(object sender, EventArgs e)
+        {
+            company.Show();
+            this.Hide();
+        }
+
+        private void gunaImageButton2_Click(object sender, EventArgs e)
+        {
+            billingForm.Show();
+            this.Hide();
+        }
+
+        private void gunaImageButton3_Click(object sender, EventArgs e)
+        {
+            employees.Show();
+            this.Hide();
+        }
+
+        private void gunaImageButton4_Click(object sender, EventArgs e)
+        {
+            Login lg = new Login();
+            lg.Show();
+            this.Hide();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaImageButton5_Click(object sender, EventArgs e)
+        {
+            medForm.Show();
+            this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaImageButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

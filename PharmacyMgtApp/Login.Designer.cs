@@ -34,6 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.Password = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -129,5 +130,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox Password;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.FontDialog fontDialog1;
     }
 }
