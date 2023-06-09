@@ -203,9 +203,9 @@
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(345, 142);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 28);
+            this.label5.Size = new System.Drawing.Size(91, 28);
             this.label5.TabIndex = 21;
-            this.label5.Text = "Login";
+            this.label5.Text = "Logout";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // gunaImageButton6

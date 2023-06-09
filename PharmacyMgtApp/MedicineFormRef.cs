@@ -106,6 +106,7 @@ namespace PharmacyMgtApp
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
             Con.Open();
+
             string MyQuery = "UPDATE Medicine_tb1 SET Bprice = " + BuyingPrice.Text + ",Sprice = " + SellingPrice.Text + ",MedQty = " + Quantity.Text + ",ExpDate = '" + ExpireDate.Text + "',Company = '" + companycb.SelectedItem.ToString() + "' WHERE  MedName = '" + MedicineName.Text + "';";
             SqlCommand cmd = new SqlCommand(MyQuery, Con);
             cmd.ExecuteNonQuery();

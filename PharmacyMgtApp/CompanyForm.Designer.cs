@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompanyForm));
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.companyGridView = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -66,20 +66,20 @@
             // 
             // companyGridView
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.companyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.companyGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.companyGridView.BackgroundColor = System.Drawing.Color.White;
             this.companyGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.companyGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.companyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.companyGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.companyGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.companyGridView.DoubleBuffered = true;
             this.companyGridView.EnableHeadersVisualStyles = false;
@@ -88,14 +88,14 @@
             this.companyGridView.Location = new System.Drawing.Point(499, 12);
             this.companyGridView.Name = "companyGridView";
             this.companyGridView.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.companyGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.companyGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.companyGridView.Size = new System.Drawing.Size(436, 429);
             this.companyGridView.TabIndex = 58;
             this.companyGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.employeeGridView_CellContentClick);
@@ -218,7 +218,7 @@
             this.gunaGradientButton3.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton3.Image")));
             this.gunaGradientButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(3, 334);
+            this.gunaGradientButton3.Location = new System.Drawing.Point(13, 344);
             this.gunaGradientButton3.Name = "gunaGradientButton3";
             this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -226,7 +226,7 @@
             this.gunaGradientButton3.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton3.OnHoverImage = null;
             this.gunaGradientButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.Size = new System.Drawing.Size(199, 42);
+            this.gunaGradientButton3.Size = new System.Drawing.Size(177, 42);
             this.gunaGradientButton3.TabIndex = 3;
             this.gunaGradientButton3.Text = "DELETE";
             this.gunaGradientButton3.Click += new System.EventHandler(this.gunaGradientButton3_Click);
@@ -245,7 +245,7 @@
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(3, 238);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(13, 248);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -253,7 +253,7 @@
             this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.OnHoverImage = null;
             this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(197, 42);
+            this.gunaGradientButton1.Size = new System.Drawing.Size(175, 42);
             this.gunaGradientButton1.TabIndex = 0;
             this.gunaGradientButton1.Text = "ADD";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
@@ -272,7 +272,7 @@
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton2.Image")));
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(3, 286);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(13, 296);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -280,7 +280,7 @@
             this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.OnHoverImage = null;
             this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.Size = new System.Drawing.Size(199, 42);
+            this.gunaGradientButton2.Size = new System.Drawing.Size(177, 42);
             this.gunaGradientButton2.TabIndex = 2;
             this.gunaGradientButton2.Text = "UPDATE";
             this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
@@ -299,9 +299,9 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.gunaLabel1);
-            this.panel1.Location = new System.Drawing.Point(3, 177);
+            this.panel1.Location = new System.Drawing.Point(13, 187);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 55);
+            this.panel1.Size = new System.Drawing.Size(175, 55);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -316,6 +316,7 @@
             this.flowLayoutPanel1.Controls.Add(this.gunaGradientButton4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(202, 453);
             this.flowLayoutPanel1.TabIndex = 57;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
@@ -328,11 +329,11 @@
             this.gunaImageButton2.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaImageButton2.Image = null;
             this.gunaImageButton2.ImageSize = new System.Drawing.Size(64, 64);
-            this.gunaImageButton2.Location = new System.Drawing.Point(3, 3);
+            this.gunaImageButton2.Location = new System.Drawing.Point(13, 13);
             this.gunaImageButton2.Name = "gunaImageButton2";
             this.gunaImageButton2.OnHoverImage = null;
             this.gunaImageButton2.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.gunaImageButton2.Size = new System.Drawing.Size(197, 168);
+            this.gunaImageButton2.Size = new System.Drawing.Size(175, 168);
             this.gunaImageButton2.TabIndex = 12;
             this.gunaImageButton2.Click += new System.EventHandler(this.gunaImageButton2_Click);
             // 
@@ -350,7 +351,7 @@
             this.gunaGradientButton4.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton4.Image")));
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton4.Location = new System.Drawing.Point(3, 382);
+            this.gunaGradientButton4.Location = new System.Drawing.Point(13, 392);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
             this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton4.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -358,7 +359,7 @@
             this.gunaGradientButton4.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.OnHoverImage = null;
             this.gunaGradientButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton4.Size = new System.Drawing.Size(199, 42);
+            this.gunaGradientButton4.Size = new System.Drawing.Size(177, 42);
             this.gunaGradientButton4.TabIndex = 4;
             this.gunaGradientButton4.Text = "BACK";
             this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);

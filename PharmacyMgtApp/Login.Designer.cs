@@ -55,6 +55,7 @@
             this.Username.Name = "Username";
             this.Username.Size = new System.Drawing.Size(174, 20);
             this.Username.TabIndex = 1;
+            this.Username.TextChanged += new System.EventHandler(this.Username_TextChanged);
             // 
             // label2
             // 

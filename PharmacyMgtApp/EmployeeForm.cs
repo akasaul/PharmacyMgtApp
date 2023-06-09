@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace PharmacyMgtApp
 {
@@ -109,7 +110,7 @@ namespace PharmacyMgtApp
                 empage.Text = row.Cells["EmpAge"].Value.ToString();
                 empphone.Text = row.Cells["EmpPhone"].Value.ToString();
                 emppassword.Text = row.Cells["EmpPassword"].Value.ToString();
-                empsex.SelectedItem = row.Cells["EmpSex"].Value.ToString();
+                empsex.SelectedText = row.Cells["EmpSex"].Value.ToString();
             }
         }
 
@@ -117,11 +118,24 @@ namespace PharmacyMgtApp
         {
             Con.Open();
 
-            string MyQuery = "UPDATE Employee_tb1 SET EmpId = '" + empid.Text + "',Empname = '" + empname.Text + "',Empsalary = '" + empsalary.Text + "',EmpAge = '" + empage.Text + "',EmpPhone = '" + empphone.Text + "',EmpPassword = '" + emppassword.Text + "',EmpSex = '" + empsex.Text + "' WHERE  EmpId = '" + empid.Text + "';";
-            SqlCommand cmd = new SqlCommand(MyQuery, Con);
-            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where EmpId = '" + empid.Text + "'", Con);
 
-            MessageBox.Show("Employee Updated Successfully!");
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                string MyQuery = "UPDATE Employee_tb1 SET EmpId = '" + empid.Text + "',Empname = '" + empname.Text + "',Empsalary = '" + empsalary.Text + "',EmpAge = '" + empage.Text + "',EmpPhone = '" + empphone.Text + "',EmpPassword = '" + emppassword.Text + "',EmpSex = '" + empsex.Text + "' WHERE  EmpId = '" + empid.Text + "';";
+                SqlCommand cmd = new SqlCommand(MyQuery, Con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Employee Updated Successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Employee Not Found");
+            }
+
 
             Con.Close();
 
@@ -137,15 +151,30 @@ namespace PharmacyMgtApp
             else
             {
                 Con.Open();
-                string myQuery = "delete from Employee_tb1 where EmpId = '" + empid.Text + "';";
-                SqlCommand cmd = new SqlCommand(myQuery, Con);
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Employee Deleted Successfully!");
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where EmpId = '" + empid.Text + "'", Con);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    string myQuery = "delete from Employee_tb1 where EmpId = '" + empid.Text + "';";
+                    SqlCommand cmd = new SqlCommand(myQuery, Con);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Employee Deleted Successfully!");
+                }
+                else
+                {
+                    MessageBox.Show("Employee Not Found");
+                }
+
                 Con.Close();
+
+                Populate();
             }
 
-            Populate();
         }
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
@@ -161,6 +190,11 @@ namespace PharmacyMgtApp
         }
 
         private void empname_OnValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
         {
 
         }

@@ -76,7 +76,7 @@ namespace PharmacyMgtApp
 
         private void gunaImageButton4_Click(object sender, EventArgs e)
         {
-            Login lg = new Login();
+            LoginForm lg = new LoginForm();
             lg.Show();
             this.Hide();
         }

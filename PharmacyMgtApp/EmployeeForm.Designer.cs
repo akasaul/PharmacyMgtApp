@@ -67,6 +67,7 @@
             this.flowLayoutPanel1.Controls.Add(this.gunaGradientButton4);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(196, 453);
             this.flowLayoutPanel1.TabIndex = 0;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
@@ -78,31 +79,32 @@
             this.gunaImageButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaImageButton1.Image = null;
             this.gunaImageButton1.ImageSize = new System.Drawing.Size(64, 64);
-            this.gunaImageButton1.Location = new System.Drawing.Point(3, 3);
+            this.gunaImageButton1.Location = new System.Drawing.Point(13, 13);
             this.gunaImageButton1.Name = "gunaImageButton1";
             this.gunaImageButton1.OnHoverImage = null;
             this.gunaImageButton1.OnHoverImageOffset = new System.Drawing.Point(0, 0);
-            this.gunaImageButton1.Size = new System.Drawing.Size(191, 123);
+            this.gunaImageButton1.Size = new System.Drawing.Size(168, 143);
             this.gunaImageButton1.TabIndex = 1;
             this.gunaImageButton1.Click += new System.EventHandler(this.gunaImageButton1_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gunaLabel1);
-            this.panel1.Location = new System.Drawing.Point(3, 132);
+            this.panel1.Location = new System.Drawing.Point(13, 162);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(197, 55);
+            this.panel1.Size = new System.Drawing.Size(168, 55);
             this.panel1.TabIndex = 1;
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(48, 17);
+            this.gunaLabel1.Location = new System.Drawing.Point(38, 20);
             this.gunaLabel1.Name = "gunaLabel1";
             this.gunaLabel1.Size = new System.Drawing.Size(102, 22);
             this.gunaLabel1.TabIndex = 0;
             this.gunaLabel1.Text = "Employee";
+            this.gunaLabel1.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // gunaGradientButton1
             // 
@@ -118,7 +120,7 @@
             this.gunaGradientButton1.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton1.Image")));
             this.gunaGradientButton1.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton1.Location = new System.Drawing.Point(3, 193);
+            this.gunaGradientButton1.Location = new System.Drawing.Point(13, 223);
             this.gunaGradientButton1.Name = "gunaGradientButton1";
             this.gunaGradientButton1.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton1.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -126,7 +128,7 @@
             this.gunaGradientButton1.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton1.OnHoverImage = null;
             this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton1.Size = new System.Drawing.Size(191, 42);
+            this.gunaGradientButton1.Size = new System.Drawing.Size(168, 42);
             this.gunaGradientButton1.TabIndex = 0;
             this.gunaGradientButton1.Text = "ADD";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
@@ -145,7 +147,7 @@
             this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton2.Image")));
             this.gunaGradientButton2.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton2.Location = new System.Drawing.Point(3, 241);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(13, 271);
             this.gunaGradientButton2.Name = "gunaGradientButton2";
             this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -153,7 +155,7 @@
             this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton2.OnHoverImage = null;
             this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton2.Size = new System.Drawing.Size(193, 42);
+            this.gunaGradientButton2.Size = new System.Drawing.Size(170, 42);
             this.gunaGradientButton2.TabIndex = 2;
             this.gunaGradientButton2.Text = "UPDATE";
             this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click);
@@ -172,7 +174,7 @@
             this.gunaGradientButton3.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton3.Image")));
             this.gunaGradientButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton3.Location = new System.Drawing.Point(3, 289);
+            this.gunaGradientButton3.Location = new System.Drawing.Point(13, 319);
             this.gunaGradientButton3.Name = "gunaGradientButton3";
             this.gunaGradientButton3.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton3.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -180,7 +182,7 @@
             this.gunaGradientButton3.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton3.OnHoverImage = null;
             this.gunaGradientButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton3.Size = new System.Drawing.Size(193, 42);
+            this.gunaGradientButton3.Size = new System.Drawing.Size(170, 42);
             this.gunaGradientButton3.TabIndex = 3;
             this.gunaGradientButton3.Text = "DELETE";
             this.gunaGradientButton3.Click += new System.EventHandler(this.gunaGradientButton3_Click);
@@ -199,7 +201,7 @@
             this.gunaGradientButton4.ForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton4.Image")));
             this.gunaGradientButton4.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaGradientButton4.Location = new System.Drawing.Point(3, 337);
+            this.gunaGradientButton4.Location = new System.Drawing.Point(13, 367);
             this.gunaGradientButton4.Name = "gunaGradientButton4";
             this.gunaGradientButton4.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
             this.gunaGradientButton4.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
@@ -207,7 +209,7 @@
             this.gunaGradientButton4.OnHoverForeColor = System.Drawing.Color.White;
             this.gunaGradientButton4.OnHoverImage = null;
             this.gunaGradientButton4.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaGradientButton4.Size = new System.Drawing.Size(193, 42);
+            this.gunaGradientButton4.Size = new System.Drawing.Size(170, 42);
             this.gunaGradientButton4.TabIndex = 4;
             this.gunaGradientButton4.Text = "BACK";
             this.gunaGradientButton4.Click += new System.EventHandler(this.gunaGradientButton4_Click);
@@ -217,8 +219,8 @@
             this.empid.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.empid.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.empid.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empid.HintForeColor = System.Drawing.Color.Empty;
-            this.empid.HintText = "";
+            this.empid.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empid.HintText = "ID";
             this.empid.isPassword = false;
             this.empid.LineFocusedColor = System.Drawing.Color.Blue;
             this.empid.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -229,7 +231,6 @@
             this.empid.Name = "empid";
             this.empid.Size = new System.Drawing.Size(102, 44);
             this.empid.TabIndex = 5;
-            this.empid.Text = "ID";
             this.empid.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.empid.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox1_OnValueChanged);
             // 
@@ -238,8 +239,8 @@
             this.empname.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.empname.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.empname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empname.HintForeColor = System.Drawing.Color.Empty;
-            this.empname.HintText = "";
+            this.empname.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empname.HintText = "Name";
             this.empname.isPassword = false;
             this.empname.LineFocusedColor = System.Drawing.Color.Blue;
             this.empname.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -250,7 +251,6 @@
             this.empname.Name = "empname";
             this.empname.Size = new System.Drawing.Size(102, 44);
             this.empname.TabIndex = 49;
-            this.empname.Text = "Name";
             this.empname.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.empname.OnValueChanged += new System.EventHandler(this.empname_OnValueChanged);
             // 
@@ -259,8 +259,8 @@
             this.empage.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.empage.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.empage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empage.HintForeColor = System.Drawing.Color.Empty;
-            this.empage.HintText = "";
+            this.empage.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empage.HintText = "Age";
             this.empage.isPassword = false;
             this.empage.LineFocusedColor = System.Drawing.Color.Blue;
             this.empage.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -271,7 +271,6 @@
             this.empage.Name = "empage";
             this.empage.Size = new System.Drawing.Size(102, 44);
             this.empage.TabIndex = 50;
-            this.empage.Text = "Age";
             this.empage.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.empage.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox3_OnValueChanged);
             // 
@@ -280,9 +279,9 @@
             this.emppassword.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.emppassword.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.emppassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.emppassword.HintForeColor = System.Drawing.Color.Empty;
-            this.emppassword.HintText = "";
-            this.emppassword.isPassword = false;
+            this.emppassword.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.emppassword.HintText = "Password";
+            this.emppassword.isPassword = true;
             this.emppassword.LineFocusedColor = System.Drawing.Color.Blue;
             this.emppassword.LineIdleColor = System.Drawing.Color.LawnGreen;
             this.emppassword.LineMouseHoverColor = System.Drawing.Color.Blue;
@@ -292,7 +291,6 @@
             this.emppassword.Name = "emppassword";
             this.emppassword.Size = new System.Drawing.Size(110, 44);
             this.emppassword.TabIndex = 51;
-            this.emppassword.Text = "Password";
             this.emppassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.emppassword.OnValueChanged += new System.EventHandler(this.bunifuMaterialTextbox4_OnValueChanged);
             // 
@@ -301,8 +299,8 @@
             this.empsalary.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.empsalary.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.empsalary.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empsalary.HintForeColor = System.Drawing.Color.Empty;
-            this.empsalary.HintText = "";
+            this.empsalary.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empsalary.HintText = "Salary";
             this.empsalary.isPassword = false;
             this.empsalary.LineFocusedColor = System.Drawing.Color.Blue;
             this.empsalary.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -313,7 +311,6 @@
             this.empsalary.Name = "empsalary";
             this.empsalary.Size = new System.Drawing.Size(126, 44);
             this.empsalary.TabIndex = 52;
-            this.empsalary.Text = "Salary";
             this.empsalary.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // empsex
@@ -344,8 +341,8 @@
             this.empphone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.empphone.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.empphone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.empphone.HintForeColor = System.Drawing.Color.Empty;
-            this.empphone.HintText = "";
+            this.empphone.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.empphone.HintText = "Phone";
             this.empphone.isPassword = false;
             this.empphone.LineFocusedColor = System.Drawing.Color.Blue;
             this.empphone.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -356,7 +353,6 @@
             this.empphone.Name = "empphone";
             this.empphone.Size = new System.Drawing.Size(126, 44);
             this.empphone.TabIndex = 54;
-            this.empphone.Text = "Phone";
             this.empphone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // employeeGridView
@@ -367,7 +363,7 @@
             this.employeeGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.employeeGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Lime;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10F);
             dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);

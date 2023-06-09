@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using Org.BouncyCastle.Utilities.Collections;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,7 +25,6 @@ namespace PharmacyMgtApp
 
             SqlDataReader rdr;
 
-
             try
             {
                 Con.Open();
@@ -42,6 +43,7 @@ namespace PharmacyMgtApp
 
         int x, unitp;
 
+
         public void fetchQty()
         {
             Con.Open();
@@ -57,6 +59,7 @@ namespace PharmacyMgtApp
                 x = Convert.ToInt32(dr["MedQty"].ToString());
                 unitp = Convert.ToInt32(dr["Sprice"].ToString());
                 Stocklbl.Text = "Avalable Stock: " + dr["MedQty"].ToString();
+
                 Stocklbl.Visible = true;
                 stockRange.MaximumRange = Convert.ToInt32(dr["MedQty"]);
             }
@@ -74,10 +77,25 @@ namespace PharmacyMgtApp
         {
             Con.Open();
 
-            int newQty = x - Convert.ToInt32(billingQty.Text);
-            string MyQuery = "UPDATE Medicine_tb1 SET MedQty = " + newQty + "' WHERE  MedName = '" + comboBox1.SelectedValue.ToString() + "';";
-            SqlCommand cmd = new SqlCommand(MyQuery, Con);
-            cmd.ExecuteNonQuery();
+            if(BillGridView.Rows == null)
+            {
+                MessageBox.Show("No Medicine Selected");
+                return;
+            }
+
+            foreach (DataGridViewRow row in BillGridView.Rows)
+            {
+                //string cellValue1 = row.Cells["ColumnName1"].Value.ToString();
+                //string cellValue2 = row.Cells["ColumnName2"].Value.ToString();
+
+                int newQty = x - Convert.ToInt32(row.Cells["MedQty"].Value);
+                string MyQuery = "UPDATE Medicine_tb1 SET MedQty = '" + newQty + "' WHERE  MedName = '" + comboBox1.SelectedValue.ToString() + "';";
+                SqlCommand cmd = new SqlCommand(MyQuery, Con);
+                cmd.ExecuteNonQuery();
+            }
+
+            //BillGridView.Rows.Clear();
+           // totalAmount.Text = "";
 
             Con.Close();
         }
@@ -105,6 +123,12 @@ namespace PharmacyMgtApp
         int GridTotal = 0;
         private void gunaGradientButton1_Click(object sender, EventArgs e)
         {
+
+            if(billingQty.Text == "")
+            {
+                MessageBox.Show("Quantity Can't be Empty");
+                return;
+            }
             int n = 0, total = Convert.ToInt32(billingQty.Text) * x;
             //DataGridViewRow newRow = new DataGridViewRow();
 
@@ -121,7 +145,6 @@ namespace PharmacyMgtApp
             else
             {
                 var index = BillGridView.Rows.Add();
-                BillGridView.Rows[index].Cells["MedId"].Value = n + 1;
                 BillGridView.Rows[index].Cells["MedName"].Value = comboBox1.SelectedValue.ToString();
                 BillGridView.Rows[index].Cells["MedQty"].Value = billingQty.Text;
                 BillGridView.Rows[index].Cells["Unitprice"].Value = unitp;
@@ -167,6 +190,12 @@ namespace PharmacyMgtApp
 
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
+            //UPDATE your_table_name
+            //SET quantity = quantity - 1
+            //WHERE MedName = 'givenName';
+
+            updateMedicine();
+
             Panel panel = new Panel();
             this.Controls.Add(panel);
             Graphics graphics = panel.CreateGraphics();
@@ -178,6 +207,8 @@ namespace PharmacyMgtApp
             graphics.CopyFromScreen(point.X, point.Y, 0, 0, size);
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+
+
         }
 
         private void bunifuDropdown1_onItemSelected(object sender, EventArgs e)
@@ -201,6 +232,18 @@ namespace PharmacyMgtApp
         }
 
         private void totalAmount_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaGradientButton4_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
+        }
+
+        private void gunaImageButton3_Click(object sender, EventArgs e)
         {
 
         }
