@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.Ocsp;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -43,11 +44,29 @@ namespace PharmacyMgtApp
                 MessageBox.Show("Missing Data. Fill All the Forms Please");
             } else {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("insert into Medicine_tb1 values('" + MedicineName.Text + "', " + BuyingPrice.Text + ", " + SellingPrice.Text + ", " + Quantity.Text + ", '" + ExpireDate.Text + "', '" + companycb.SelectedItem.ToString() + "' )", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Medicine Successfully Added");
-                Con.Close();
-                Populate();
+
+
+                // logic
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Medicine_tb1 where MedName = '" + MedicineName.Text + "'", Con);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("Medicine Already Exists!");
+                    Con.Close();
+                    return;
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("insert into Medicine_tb1 values('" + MedicineName.Text + "', " + BuyingPrice.Text + ", " + SellingPrice.Text + ", " + Quantity.Text + ", '" + ExpireDate.Text + "', '" + companycb.SelectedValue.ToString() + "' )", Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Medicine Successfully Added");
+                    Con.Close();
+                    Populate();
+                }
+                // logic
             }
         }
 
@@ -107,11 +126,33 @@ namespace PharmacyMgtApp
         {
             Con.Open();
 
-            string MyQuery = "UPDATE Medicine_tb1 SET Bprice = " + BuyingPrice.Text + ",Sprice = " + SellingPrice.Text + ",MedQty = " + Quantity.Text + ",ExpDate = '" + ExpireDate.Text + "',Company = '" + companycb.SelectedItem.ToString() + "' WHERE  MedName = '" + MedicineName.Text + "';";
-            SqlCommand cmd = new SqlCommand(MyQuery, Con);
-            cmd.ExecuteNonQuery();
+            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Medicine_tb1 where MedName = '" + MedicineName.Text + "'", Con);
 
-            MessageBox.Show("Medicine Update Successfully!");
+            DataTable dt = new DataTable();
+
+            sda.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                if(BuyingPrice.Text == "" || SellingPrice.Text == "" || MedicineName.Text == "" || Quantity.Text == "" || ExpireDate.Text == "" || companycb.SelectedItem.ToString() == "")
+                {
+                    MessageBox.Show("Please Fill out All Fields");
+                    return;
+                }
+
+                string MyQuery = "UPDATE Medicine_tb1 SET Bprice = " + BuyingPrice.Text + ",Sprice = " + SellingPrice.Text + ",MedQty = " + Quantity.Text + ",ExpDate = '" + ExpireDate.Text + "',Company = '" + companycb.SelectedItem.ToString() + "' WHERE  MedName = '" + MedicineName.Text + "';";
+                SqlCommand cmd = new SqlCommand(MyQuery, Con);
+                cmd.ExecuteNonQuery();
+
+                MessageBox.Show("Medicine Update Successfully!");
+            }
+
+            else
+            {
+                MessageBox.Show("Medicine Not Found");
+                Con.Close();
+                return;
+            }
 
             Con.Close();
 
@@ -127,11 +168,31 @@ namespace PharmacyMgtApp
             else
             {
                 Con.Open();
-                string myQuery = "delete from Medicine_tb1 where MedName = '" + MedicineName.Text + "';";
-                SqlCommand cmd = new SqlCommand(myQuery, Con);
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Medicine Deleted Successfully");
+                // logic
+
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Medicine_tb1 where MedName = '" + MedicineName.Text + "'", Con);
+
+                DataTable dt = new DataTable();
+
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    string myQuery = "delete from Medicine_tb1 where MedName = '" + MedicineName.Text + "';";
+                    SqlCommand cmd = new SqlCommand(myQuery, Con);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Medicine Deleted Successfully");
+                }
+
+                else
+                {
+                    MessageBox.Show("Medicine Not Found");
+                    Con.Close();
+                    return;
+                }
+               
                 Con.Close();
             }
 
@@ -146,6 +207,11 @@ namespace PharmacyMgtApp
         }
 
         private void gunaDateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -23,7 +23,7 @@ namespace PharmacyMgtApp
             SqlDataAdapter dataAdapter = new SqlDataAdapter(Myquery, Con);
             SqlCommandBuilder commandBuilder = new SqlCommandBuilder(dataAdapter);
 
-            var ds = new DataSet();
+            var ds = new DataSet(); 
             dataAdapter.Fill(ds);
 
             companyGridView.ReadOnly = true;
@@ -62,11 +62,30 @@ namespace PharmacyMgtApp
             else
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("insert into Company_tb1 values('" + cmpId.Text + "', '" + cmpName.Text + "', '" + cmpPhone.Text + "' , '" + cmpAddress.Text + "')", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Company Succesfully added");
-                Con.Close();
-                Populate();
+
+
+                // logic
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Company_tb1 where CompId = '" + cmpId.Text + "'", Con);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("Company Already Exists!");
+                    Con.Close();
+                    return;
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("insert into Company_tb1 values('" + cmpId.Text + "', '" + cmpName.Text + "', '" + cmpPhone.Text + "' , '" + cmpAddress.Text + "')", Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Company Succesfully added");
+                    Con.Close();
+                    Populate();
+                }
+                // logic
+
             }
         }
 
@@ -74,11 +93,34 @@ namespace PharmacyMgtApp
         {
             Con.Open();
 
-            string MyQuery = "UPDATE Company_tb1 SET CompId = '" + cmpId.Text + "',CompName = '" + cmpName.Text + "',CompPhone = '" + cmpPhone.Text + "',CompAddress = '" + cmpAddress.Text + "' WHERE  CompId = '" + cmpId.Text + "';";
-            SqlCommand cmd = new SqlCommand(MyQuery, Con);
-            cmd.ExecuteNonQuery();
+            if(cmpId.Text == "" || cmpName.Text == "" || cmpPhone.Text == "" || cmpAddress.Text == "")
+            {
+                MessageBox.Show("Please Fill out required Fields");
+                Con.Close();
+                return;
+            }
 
-            MessageBox.Show("Company Updated Successfully!");
+
+            // logic
+            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Company_tb1 where CompId = '" + cmpId.Text + "'", Con);
+
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+
+            if (dt.Rows[0][0].ToString() == "1")
+            {
+                string MyQuery = "UPDATE Company_tb1 SET CompId = '" + cmpId.Text + "',CompName = '" + cmpName.Text + "',CompPhone = '" + cmpPhone.Text + "',CompAddress = '" + cmpAddress.Text + "' WHERE  CompId = '" + cmpId.Text + "';";
+                SqlCommand cmd = new SqlCommand(MyQuery, Con);
+                cmd.ExecuteNonQuery();
+                
+                MessageBox.Show("Company Updated Successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Company Not Found");
+            }
+
+            // logic 
 
             Con.Close();
 
@@ -94,12 +136,32 @@ namespace PharmacyMgtApp
             else
             {
                 Con.Open();
-                string myQuery = "delete from Company_tb1 where CompId = '" + cmpId.Text + "';";
-                SqlCommand cmd = new SqlCommand(myQuery, Con);
 
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Company Deleted Successfully!");
-                Con.Close();
+
+                // logic
+
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Company_tb1 where CompId = '" + cmpId.Text + "'", Con);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    string myQuery = "delete from Company_tb1 where CompId = '" + cmpId.Text + "';";
+                    SqlCommand cmd = new SqlCommand(myQuery, Con);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Company Deleted Successfully!");
+                    Con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Employee Not Found");
+                    Con.Close();
+                    return;
+                }
+
+                //logic
             }
             Populate();
         }

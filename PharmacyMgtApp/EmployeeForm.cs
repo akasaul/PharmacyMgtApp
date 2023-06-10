@@ -51,11 +51,29 @@ namespace PharmacyMgtApp
             else
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("insert into Employee_tb1 values('" + empid.Text + "', '" + empname.Text + "', '" + empsalary.Text + "' , " + empage.Text + ", '" + empphone.Text + "' , '" + emppassword.Text + "', '" + empsex.Text + "')", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Employees Succesfully added");
-                Con.Close();
-                Populate();
+
+                // logic
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where EmpId = '" + empid.Text + "'", Con);
+
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+
+                if (dt.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("Employee Already Exists!");
+                    Con.Close();
+                    return;
+                }
+                else
+                {
+                    SqlCommand cmd = new SqlCommand("insert into Employee_tb1 values('" + empid.Text + "', '" + empname.Text + "', '" + empsalary.Text + "' , " + empage.Text + ", '" + empphone.Text + "' , '" + emppassword.Text + "', '" + empsex.Text + "')", Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Employees Succesfully added");
+                    Con.Close();
+                    Populate();
+                }
+                // logic
+
             }
         }
 

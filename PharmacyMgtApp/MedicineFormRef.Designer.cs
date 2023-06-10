@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MedicineFormRef));
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.dataGridView1 = new Bunifu.Framework.UI.BunifuCustomDataGrid();
@@ -70,20 +70,20 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 10F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(5);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Century Gothic", 10F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(5);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.DoubleBuffered = true;
             this.dataGridView1.EnableHeadersVisualStyles = false;
@@ -92,14 +92,14 @@
             this.dataGridView1.Location = new System.Drawing.Point(513, 9);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Lime;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Lime;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.Size = new System.Drawing.Size(428, 429);
             this.dataGridView1.TabIndex = 61;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -109,8 +109,8 @@
             this.BuyingPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.BuyingPrice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.BuyingPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.BuyingPrice.HintForeColor = System.Drawing.Color.Empty;
-            this.BuyingPrice.HintText = "";
+            this.BuyingPrice.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BuyingPrice.HintText = "Buying Price";
             this.BuyingPrice.isPassword = false;
             this.BuyingPrice.LineFocusedColor = System.Drawing.Color.Blue;
             this.BuyingPrice.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -121,7 +121,6 @@
             this.BuyingPrice.Name = "BuyingPrice";
             this.BuyingPrice.Size = new System.Drawing.Size(126, 44);
             this.BuyingPrice.TabIndex = 52;
-            this.BuyingPrice.Text = "Buying Price";
             this.BuyingPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // bunifuCards1
@@ -214,8 +213,8 @@
             this.Quantity.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Quantity.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.Quantity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.Quantity.HintForeColor = System.Drawing.Color.Empty;
-            this.Quantity.HintText = "";
+            this.Quantity.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.Quantity.HintText = "Quantity";
             this.Quantity.isPassword = false;
             this.Quantity.LineFocusedColor = System.Drawing.Color.Blue;
             this.Quantity.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -226,7 +225,6 @@
             this.Quantity.Name = "Quantity";
             this.Quantity.Size = new System.Drawing.Size(126, 44);
             this.Quantity.TabIndex = 56;
-            this.Quantity.Text = "Quantity";
             this.Quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // MedicineName
@@ -234,8 +232,8 @@
             this.MedicineName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.MedicineName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.MedicineName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.MedicineName.HintForeColor = System.Drawing.Color.Empty;
-            this.MedicineName.HintText = "";
+            this.MedicineName.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.MedicineName.HintText = "Name";
             this.MedicineName.isPassword = false;
             this.MedicineName.LineFocusedColor = System.Drawing.Color.Blue;
             this.MedicineName.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -246,7 +244,6 @@
             this.MedicineName.Name = "MedicineName";
             this.MedicineName.Size = new System.Drawing.Size(102, 44);
             this.MedicineName.TabIndex = 5;
-            this.MedicineName.Text = "Name";
             this.MedicineName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.MedicineName.OnValueChanged += new System.EventHandler(this.MedicineName_OnValueChanged);
             // 
@@ -255,8 +252,8 @@
             this.SellingPrice.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.SellingPrice.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.SellingPrice.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.SellingPrice.HintForeColor = System.Drawing.Color.Empty;
-            this.SellingPrice.HintText = "";
+            this.SellingPrice.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.SellingPrice.HintText = "Seling Price";
             this.SellingPrice.isPassword = false;
             this.SellingPrice.LineFocusedColor = System.Drawing.Color.Blue;
             this.SellingPrice.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -383,6 +380,7 @@
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
             this.flowLayoutPanel1.Size = new System.Drawing.Size(202, 453);
             this.flowLayoutPanel1.TabIndex = 60;
+            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // gunaImageButton2
             // 

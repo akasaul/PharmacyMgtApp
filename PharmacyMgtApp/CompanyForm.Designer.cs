@@ -105,8 +105,8 @@
             this.cmpPhone.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmpPhone.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmpPhone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmpPhone.HintForeColor = System.Drawing.Color.Empty;
-            this.cmpPhone.HintText = "";
+            this.cmpPhone.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmpPhone.HintText = "Phone";
             this.cmpPhone.isPassword = false;
             this.cmpPhone.LineFocusedColor = System.Drawing.Color.Blue;
             this.cmpPhone.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -117,7 +117,6 @@
             this.cmpPhone.Name = "cmpPhone";
             this.cmpPhone.Size = new System.Drawing.Size(126, 44);
             this.cmpPhone.TabIndex = 54;
-            this.cmpPhone.Text = "Phone";
             this.cmpPhone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.cmpPhone.OnValueChanged += new System.EventHandler(this.cmpPhone_OnValueChanged);
             // 
@@ -126,8 +125,8 @@
             this.cmpAddress.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmpAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmpAddress.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmpAddress.HintForeColor = System.Drawing.Color.Empty;
-            this.cmpAddress.HintText = "";
+            this.cmpAddress.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmpAddress.HintText = "Address";
             this.cmpAddress.isPassword = false;
             this.cmpAddress.LineFocusedColor = System.Drawing.Color.Blue;
             this.cmpAddress.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -138,7 +137,6 @@
             this.cmpAddress.Name = "cmpAddress";
             this.cmpAddress.Size = new System.Drawing.Size(126, 44);
             this.cmpAddress.TabIndex = 52;
-            this.cmpAddress.Text = "Address";
             this.cmpAddress.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.cmpAddress.OnValueChanged += new System.EventHandler(this.cmpAddress_OnValueChanged);
             // 
@@ -167,8 +165,8 @@
             this.cmpId.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmpId.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmpId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmpId.HintForeColor = System.Drawing.Color.Empty;
-            this.cmpId.HintText = "";
+            this.cmpId.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmpId.HintText = "ID";
             this.cmpId.isPassword = false;
             this.cmpId.LineFocusedColor = System.Drawing.Color.Blue;
             this.cmpId.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -179,7 +177,6 @@
             this.cmpId.Name = "cmpId";
             this.cmpId.Size = new System.Drawing.Size(102, 44);
             this.cmpId.TabIndex = 5;
-            this.cmpId.Text = "ID";
             this.cmpId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.cmpId.OnValueChanged += new System.EventHandler(this.cmpId_OnValueChanged);
             // 
@@ -188,8 +185,8 @@
             this.cmpName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.cmpName.Font = new System.Drawing.Font("Century Gothic", 9.75F);
             this.cmpName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.cmpName.HintForeColor = System.Drawing.Color.Empty;
-            this.cmpName.HintText = "";
+            this.cmpName.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.cmpName.HintText = "Name";
             this.cmpName.isPassword = false;
             this.cmpName.LineFocusedColor = System.Drawing.Color.Blue;
             this.cmpName.LineIdleColor = System.Drawing.Color.LawnGreen;
@@ -200,7 +197,6 @@
             this.cmpName.Name = "cmpName";
             this.cmpName.Size = new System.Drawing.Size(102, 44);
             this.cmpName.TabIndex = 49;
-            this.cmpName.Text = "Name";
             this.cmpName.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.cmpName.OnValueChanged += new System.EventHandler(this.cmpName_OnValueChanged);
             // 
@@ -374,6 +370,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "CompanyForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CompanyForm";
             this.Load += new System.EventHandler(this.CompanyForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.companyGridView)).EndInit();
