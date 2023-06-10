@@ -36,6 +36,7 @@
             this.gunaGradientButton4 = new Guna.UI.WinForms.GunaGradientButton();
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.bunifuCards1 = new Bunifu.Framework.UI.BunifuCards();
+            this.gunaGradientButton2 = new Guna.UI.WinForms.GunaGradientButton();
             this.Username = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.gunaGradientButton1 = new Guna.UI.WinForms.GunaGradientButton();
             this.Password = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -55,7 +56,7 @@
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 1);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(202, 465);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(202, 477);
             this.flowLayoutPanel1.TabIndex = 59;
             // 
             // gunaImageButton2
@@ -137,6 +138,7 @@
             this.bunifuCards1.BorderRadius = 5;
             this.bunifuCards1.BottomSahddow = true;
             this.bunifuCards1.color = System.Drawing.Color.Lime;
+            this.bunifuCards1.Controls.Add(this.gunaGradientButton2);
             this.bunifuCards1.Controls.Add(this.Username);
             this.bunifuCards1.Controls.Add(this.gunaGradientButton1);
             this.bunifuCards1.Controls.Add(this.Password);
@@ -146,8 +148,36 @@
             this.bunifuCards1.Name = "bunifuCards1";
             this.bunifuCards1.RightSahddow = true;
             this.bunifuCards1.ShadowDepth = 20;
-            this.bunifuCards1.Size = new System.Drawing.Size(404, 343);
+            this.bunifuCards1.Size = new System.Drawing.Size(454, 393);
             this.bunifuCards1.TabIndex = 61;
+            this.bunifuCards1.Paint += new System.Windows.Forms.PaintEventHandler(this.bunifuCards1_Paint);
+            // 
+            // gunaGradientButton2
+            // 
+            this.gunaGradientButton2.AnimationHoverSpeed = 0.07F;
+            this.gunaGradientButton2.AnimationSpeed = 0.03F;
+            this.gunaGradientButton2.BackColor = System.Drawing.Color.Lime;
+            this.gunaGradientButton2.BaseColor1 = System.Drawing.Color.Transparent;
+            this.gunaGradientButton2.BaseColor2 = System.Drawing.Color.Transparent;
+            this.gunaGradientButton2.BorderColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaGradientButton2.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaGradientButton2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaGradientButton2.ForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaGradientButton2.Image")));
+            this.gunaGradientButton2.ImageSize = new System.Drawing.Size(30, 30);
+            this.gunaGradientButton2.Location = new System.Drawing.Point(237, 333);
+            this.gunaGradientButton2.Name = "gunaGradientButton2";
+            this.gunaGradientButton2.OnHoverBaseColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(145)))), ((int)(((byte)(221)))));
+            this.gunaGradientButton2.OnHoverBaseColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(85)))), ((int)(((byte)(255)))));
+            this.gunaGradientButton2.OnHoverBorderColor = System.Drawing.Color.BurlyWood;
+            this.gunaGradientButton2.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaGradientButton2.OnHoverImage = null;
+            this.gunaGradientButton2.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaGradientButton2.Size = new System.Drawing.Size(168, 38);
+            this.gunaGradientButton2.TabIndex = 63;
+            this.gunaGradientButton2.Text = "CUSTOMER";
+            this.gunaGradientButton2.Click += new System.EventHandler(this.gunaGradientButton2_Click_1);
             // 
             // Username
             // 
@@ -193,7 +223,7 @@
             this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton1.Size = new System.Drawing.Size(160, 42);
             this.gunaGradientButton1.TabIndex = 16;
-            this.gunaGradientButton1.Text = "LOGIN";
+            this.gunaGradientButton1.Text = "ADMIN";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // Password
@@ -203,7 +233,7 @@
             this.Password.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Password.HintForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Password.HintText = "Password";
-            this.Password.isPassword = false;
+            this.Password.isPassword = true;
             this.Password.LineFocusedColor = System.Drawing.Color.Blue;
             this.Password.LineIdleColor = System.Drawing.Color.LawnGreen;
             this.Password.LineMouseHoverColor = System.Drawing.Color.Blue;
@@ -260,5 +290,6 @@
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Bunifu.Framework.UI.BunifuMaterialTextbox Username;
         private Guna.UI.WinForms.GunaGradientButton gunaGradientButton1;
+        private Guna.UI.WinForms.GunaGradientButton gunaGradientButton2;
     }
 }

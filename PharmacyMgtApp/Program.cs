@@ -16,7 +16,7 @@ namespace PharmacyMgtApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MedicineFormRef());
+            Application.Run(new LoginForm());
         }
     }
 }

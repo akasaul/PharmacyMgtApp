@@ -19,7 +19,7 @@ namespace PharmacyMgtApp
         MedicineFormRef medForm = new MedicineFormRef();
         EmployeeForm employees = new EmployeeForm();     
         CompanyForm company = new CompanyForm();   
-        BillingFormRef billingForm = new BillingFormRef();        
+        BillingFormRef billingForm = new BillingFormRef(true);        
         private void button1_Click_1(object sender, EventArgs e)
         {
             medForm.Show();     

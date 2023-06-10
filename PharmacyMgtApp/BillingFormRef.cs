@@ -16,8 +16,16 @@ namespace PharmacyMgtApp
 {
     public partial class BillingFormRef : Form
     {
-        SqlConnection Con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Njayzzy\\Documents\\PhramacyApp.mdf;Integrated Security=True;Connect Timeout=30");
+        private bool isAdmin;
 
+        public BillingFormRef(bool isAdmin = false)
+        {
+            this.isAdmin = isAdmin;
+            InitializeComponent();
+        }
+
+        SqlConnection Con = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\Njayzzy\\Documents\\PhramacyApp.mdf;Integrated Security=True;Connect Timeout=30");
+        
         void populateComboBox()
         {
             string sql = "select * from Medicine_tb1";
@@ -65,12 +73,6 @@ namespace PharmacyMgtApp
             }
 
             Con.Close();
-        }
-
-
-        public BillingFormRef()
-        {
-            InitializeComponent();
         }
 
         public void updateMedicine()
@@ -285,9 +287,17 @@ namespace PharmacyMgtApp
 
         private void gunaGradientButton4_Click(object sender, EventArgs e)
         {
-            HomeForm home = new HomeForm();
-            home.Show();
-            this.Hide();
+            if(this.isAdmin)
+            {   
+                HomeForm home = new HomeForm();
+                home.Show();
+                this.Hide();
+            } else
+            {
+                LoginForm login = new LoginForm();
+                login.Show();
+                this.Hide();
+            }
         }
 
         private void gunaImageButton3_Click(object sender, EventArgs e)

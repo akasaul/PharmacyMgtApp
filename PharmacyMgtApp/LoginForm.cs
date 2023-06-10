@@ -34,12 +34,13 @@ namespace PharmacyMgtApp
         {
             HomeForm homeForm = new HomeForm();
             Con.Open();
-            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where Empname = '" + Username.Text + "' and EmpPassword = '" + Password.Text + "'", Con);
 
+            SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where Empname = '" + Username.Text + "' and EmpPassword = '" + Password.Text + "'", Con);
+            
             DataTable dt = new DataTable();
             sda.Fill(dt);
 
-            if (dt.Rows[0][0].ToString() == "1")
+            if (Convert.ToInt32(dt.Rows[0][0].ToString()) > 0)
             {
                 homeForm.Show();
                 this.Hide();
@@ -48,8 +49,9 @@ namespace PharmacyMgtApp
             {
                 MessageBox.Show("Wrong Username or Password");
             }
-
+            
             Con.Close();
+
         }
 
         private void bunifuMaterialTextbox1_OnValueChanged(object sender, EventArgs e)
@@ -70,6 +72,18 @@ namespace PharmacyMgtApp
         private void gunaGradientButton2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void bunifuCards1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void gunaGradientButton2_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            BillingFormRef billingForm = new BillingFormRef();
+            billingForm.Show();
         }
     }
 }
