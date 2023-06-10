@@ -53,7 +53,7 @@ namespace PharmacyMgtApp
                 Con.Open();
 
                 // logic
-                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where EmpId = '" + empid.Text + "'", Con);
+                SqlDataAdapter sda = new SqlDataAdapter("select COUNT(*) from Employee_tb1 where EmpId = '" + empid.Text + "' OR  EmpName = '" + empname.Text + "'", Con);
 
                 DataTable dt = new DataTable();
                 sda.Fill(dt);

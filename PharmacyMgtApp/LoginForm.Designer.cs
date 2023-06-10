@@ -223,7 +223,7 @@
             this.gunaGradientButton1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaGradientButton1.Size = new System.Drawing.Size(160, 42);
             this.gunaGradientButton1.TabIndex = 16;
-            this.gunaGradientButton1.Text = "ADMIN";
+            this.gunaGradientButton1.Text = "EMPLOYEE";
             this.gunaGradientButton1.Click += new System.EventHandler(this.gunaGradientButton1_Click);
             // 
             // Password
