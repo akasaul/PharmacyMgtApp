@@ -79,16 +79,18 @@ namespace PharmacyMgtApp
 
             if(BillGridView.Rows == null)
             {
-                MessageBox.Show("No Medicine Selected");
                 return;
             }
 
             foreach (DataGridViewRow row in BillGridView.Rows)
             {
-                //string cellValue1 = row.Cells["ColumnName1"].Value.ToString();
-                //string cellValue2 = row.Cells["ColumnName2"].Value.ToString();
+                string query = "SELECT COUNT(*) FROM Medicine_tb1 WHERE MedName = '" + MedName + "';";
+                SqlCommand command = new SqlCommand(query, Con);
 
-                int newQty = x - Convert.ToInt32(row.Cells["MedQty"].Value);
+                object result = command.ExecuteScalar();
+                int prevQty = Convert.ToInt32(result);
+
+                int newQty = prevQty - Convert.ToInt32(row.Cells["MedQty"].Value);
                 string MyQuery = "UPDATE Medicine_tb1 SET MedQty = '" + newQty + "' WHERE  MedName = '" + comboBox1.SelectedValue.ToString() + "';";
                 SqlCommand cmd = new SqlCommand(MyQuery, Con);
                 cmd.ExecuteNonQuery();
@@ -130,23 +132,59 @@ namespace PharmacyMgtApp
                 return;
             }
             int n = 0, total = Convert.ToInt32(billingQty.Text) * x;
-            //DataGridViewRow newRow = new DataGridViewRow();
 
+            if(billingQty.Text == "")
+            {
+                MessageBox.Show("Quantity Should not be Empty!");
+            }
 
-            //BillGridView.Rows[index].Cells["Column1"].Value = "Column1";
-            //BillGridView.Rows[index].Cells["Column2"].Value = 5.6;
-
-            //DataGridViewRow newRow = (DataGridViewRow)BillGridView.Rows[0].Clone();
-
-            if (billingQty.Text == "" || Convert.ToInt32(billingQty.Text) > x)
+            if (Convert.ToInt32(billingQty.Text) > x)
             {
                 MessageBox.Show("Not Enough Stocks, Please Check!");
             }
             else
             {
+                bool isFound = false;
+
+                if(BillGridView.Rows != null)
+                {
+
+                    foreach (DataGridViewRow row in BillGridView.Rows)
+                    {
+
+                        // Check if cells in the table exist and not null
+
+                        if (row.Cells["MedName"] != null && row.Cells["MedQty"] != null && row.Cells != null && row != null)
+                        {
+                            if (row.Cells["MedName"].Value == comboBox1.SelectedValue)
+                            {
+                                isFound = true;
+                                row.Cells["MedQty"].Value = Convert.ToInt32(billingQty.Text) + Convert.ToInt32(row.Cells["MedQty"].Value);
+                                //billingQty.Text = 
+                                if(Convert.ToInt32(row.Cells["MedQty"].Value) <= stockRange.MaximumRange)
+                                {
+                                    stockRange.RangeMax = Convert.ToInt32(row.Cells["MedQty"].Value);
+                                } else
+                                {
+                                    MessageBox.Show("Not Enough Stocks");
+                                    return;
+                                }
+                                return;
+                            }
+                        }
+                    
+                    }
+
+                }
+
+                if(isFound)
+                {
+                    return;
+                }
+
                 var index = BillGridView.Rows.Add();
                 BillGridView.Rows[index].Cells["MedName"].Value = comboBox1.SelectedValue.ToString();
-                BillGridView.Rows[index].Cells["MedQty"].Value = billingQty.Text;
+                BillGridView.Rows[index].Cells["MedQty"].Value = Convert.ToInt32(billingQty.Text);
                 BillGridView.Rows[index].Cells["Unitprice"].Value = unitp;
                 BillGridView.Rows[index].Cells["TotalPrice"].Value = unitp * Convert.ToInt32(billingQty.Text);
 
@@ -194,7 +232,13 @@ namespace PharmacyMgtApp
             //SET quantity = quantity - 1
             //WHERE MedName = 'givenName';
 
-            updateMedicine();
+            //updateMedicine();
+
+            if(BillGridView.Rows == null || BillGridView.Rows.Count == 0)
+            {
+                MessageBox.Show("You Have Selected No Medicines");
+                return;
+            }
 
             Panel panel = new Panel();
             this.Controls.Add(panel);
@@ -208,7 +252,10 @@ namespace PharmacyMgtApp
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
 
-
+            BillGridView.Rows.Clear();
+            Stocklbl.Text = "Available Stock: ";
+            billingQty.Text = "";
+            totalAmount.Text = "0"; 
         }
 
         private void bunifuDropdown1_onItemSelected(object sender, EventArgs e)
